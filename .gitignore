@@ -1,2 +1,3 @@
 *configmap*
 venv/
+local_settings.py
