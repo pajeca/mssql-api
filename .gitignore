@@ -1,3 +1,4 @@
 *configmap*
 venv/
 local_settings.py
+codegen.py
