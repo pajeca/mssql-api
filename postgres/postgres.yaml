@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+  namespace: mssql-app
+  labels:
+    db: postgres
+    app: mssql_app
+spec:
+  selector:
+    matchLabels:
+      db: postgres
+      app: mssql_app
+  serviceName: postgres
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        db: postgres
+        app: mssql_app
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: postgres
+        image: postgres:14
+        ports:
+        - containerPort: 5432
+        envFrom:
+        - configMapRef:
+            name: postgres-config
+        volumeMounts:
+        - name: data
+          mountPath: /var/lib/postgresql/data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: postgres-pvc

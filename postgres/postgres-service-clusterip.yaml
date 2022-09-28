@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  namespace: mssql-app
+  labels:
+    db: postgres
+    app: mssql_app
+spec:
+  ports:
+  - port: 5432
+  selector:
+    db: postgres
+    app: mssql_app
