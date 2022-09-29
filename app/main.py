@@ -16,9 +16,9 @@ def get_db():
         db.close()
 
 
-@app.get('/')
-async def hello():
-    return {"message": "Hello World"}
+#@app.get('/')
+#async def hello():
+#    return {"message": "Hello World"}
 
 @app.get("/{version}/all", response_model=list[schemas.BuildResponse])
 async def get_version_all(version: str, db: Session = Depends(get_db)):

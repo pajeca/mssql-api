@@ -16,13 +16,13 @@ class BuildResponse(BaseModel):
     file_version: str
     description: str
     url_link: Optional[str]
-    release_date: date
-    is_latest: Optional[str]
+    release_date: Optional[date]
+    is_latest: Optional[bool]
     next_build: Optional[str]
-    community_technology_preview: Optional[str]
-    cumulative_update: Optional[str]
-    hot_fix: Optional[str]
-    released_to_manufacturing: Optional[str]
+    community_technology_preview: Optional[bool]
+    cumulative_update: Optional[bool]
+    hot_fix: Optional[bool]
+    released_to_manufacturing: Optional[bool]
 
     class Config:
         orm_mode = True
