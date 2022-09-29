@@ -2,3 +2,4 @@
 venv/
 local_settings.py
 codegen.py
+__pycache__
