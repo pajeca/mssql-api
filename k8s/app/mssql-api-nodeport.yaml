@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mssql-api
+  name: mssql-api-nodeport
+  namespace: mssql-app
+spec:
+  ports:
+  - port: 8000
+    protocol: TCP
+    targetPort: 8000
+    nodePort: 30800
+  selector:
+    app: mssql-api
+  type: NodePort

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mssql-api
+  name: mssql-api
+  namespace: mssql-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mssql-api
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mssql-api
+    spec:
+      containers:
+      - image: pajeca/mssql-api
+        name: mssql-api
+        ports: 
+        - containerPort: 8000
+
