@@ -22,7 +22,7 @@ data:
   POSTGRES_DB: mssql_app_db
 ```
 
-Run app from a Docker Container:  
+**Run app from a Docker Container:**    
 Once the postgres DB is set with the required schema/tables/data and the statefulset deployed, the application can be run locally from a docker container: 
 
 create a local_settings.py file under /app which will contain  
@@ -41,10 +41,16 @@ docker build -t <image_name> .
 run the image:  
 docker run -d --name <container_name> -p 8000:8000 <image_name>
 
-Access the application in browser and check documents @ container-hostip:8000/docs  
+Access the application in browser and check documents @:    
+```
+container-hostip:8000/docs
+```
 
-Deploy App to K8s:  
+**Deploy App to K8s:**   
 Deploy all files within ../k8s/postgres and ensure all data required is created.
 Deploy all files within ../k8s/app
 
-Access the api via http://<container host node>:30800/docs
+Access the api via:  
+```
+http://<container host node>:30800/docs
+```
