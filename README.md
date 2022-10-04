@@ -54,3 +54,7 @@ Access the api via:
 ```
 http://<container host node>:30800/docs
 ```
+
+
+SQL Version and Build data is from this google doc provided by sqlserverbuilds.blogspot.com:  
+https://docs.google.com/spreadsheets/d/16Ymdz80xlCzb6CwRFVokwo0onkofVYFoSkc7mYe6pgw/view#gid=0
